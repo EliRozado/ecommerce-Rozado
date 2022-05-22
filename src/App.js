@@ -8,7 +8,7 @@ function App() {
       <header className="header">
         <NavBar/>
       </header>
-      <ItemListContainer/>
+      <ItemListContainer greeting="Bienvenido a ecommerce"/>
     </>
   );
 }

@@ -1,3 +1,6 @@
 .ItemListContainer{
     text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
 }

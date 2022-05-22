@@ -1,9 +1,11 @@
 import './ItemListContainer.css'
+import ItemCount from '../ItemCount/ItemCount';
 
-function ItemListContainer() {
+function ItemListContainer(props) {
     return (
         <div className="ItemListContainer">
-            <h2>Bienvenido a ecommerce</h2>
+            <h2>{props.greeting}</h2>
+            <ItemCount stock="15"/>
         </div>
     );
 }

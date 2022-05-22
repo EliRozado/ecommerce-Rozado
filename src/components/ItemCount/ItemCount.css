@@ -1,0 +1,23 @@
+.ItemCount-Container{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.ItemCount{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+}
+
+.Number{
+    padding: 5px;
+}
+
+.addToCart{
+    align-self: center;
+}
