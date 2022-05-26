@@ -3,19 +3,21 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    width: 100%;
     gap: 15px;
 }
 
 .ItemCount{
     display: flex;
     flex-direction: row;
+    gap: 20px;
     justify-content: space-between;
     align-items: center;
-    width: 200px;
 }
 
 .Number{
     padding: 5px;
+    
 }
 
 .addToCart{

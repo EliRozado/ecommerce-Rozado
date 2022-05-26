@@ -1,11 +1,12 @@
 import './ItemListContainer.css'
-import ItemCount from '../ItemCount/ItemCount';
+import ItemList from '../ItemList/ItemList';
 
 function ItemListContainer(props) {
     return (
         <div className="ItemListContainer">
             <h2>{props.greeting}</h2>
-            <ItemCount stock="15"/>
+            <ItemList products={props.products}/>
+            <ItemList products={props.products}/>
         </div>
     );
 }
