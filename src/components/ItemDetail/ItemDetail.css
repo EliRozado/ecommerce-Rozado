@@ -1,0 +1,21 @@
+.ItemDetails{
+    padding: 20px;
+    text-align: center;
+}
+
+.ItemDetails > h2{
+    font-size: 2em;
+    margin: 20px;
+}
+
+.ItemDetails > p{
+    margin: 20px;
+}
+
+.description{
+    font-size: 1.3em;
+}
+
+.price{
+    font-size: 1.4em;
+}

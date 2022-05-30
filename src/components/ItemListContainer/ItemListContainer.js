@@ -6,7 +6,6 @@ function ItemListContainer(props) {
         <div className="ItemListContainer">
             <h2>{props.greeting}</h2>
             <ItemList products={props.products}/>
-            <ItemList products={props.products}/>
         </div>
     );
 }
