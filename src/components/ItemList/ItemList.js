@@ -6,7 +6,7 @@ const ItemList = ({products}) => {
     return(
         <Grid container justifyContent="center" spacing={2}>
             {products.map(product => 
-                <Grid item>
+                <Grid item key={product.id}>
                     <Item {...product}/>
                 </Grid>)
             }

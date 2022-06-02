@@ -2,6 +2,19 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Descripción del proyecto
+
+Idea de un ecommerce que maneja la venta de productos de licencias especificas.
+
+## Librarias usadas
+
+ - [Material UI](https://mui.com/)
+ - [React Router](https://reactrouter.com/)
+
+## Navegabilidad
+
+ ![gif de navegabilidad](navegabilidad.gif)
+
 ## Available Scripts
 
 In the project directory, you can run:

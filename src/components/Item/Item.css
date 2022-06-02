@@ -7,6 +7,7 @@
 
 .product img{
     width:100%;
+    max-width: 200px;
     max-height: 250px;
     object-fit: cover;
 }
@@ -17,4 +18,8 @@
 
 .product p:last-of-type{
     font-size: 1.1em;
+}
+
+.detail-btn{
+    text-decoration: none;
 }

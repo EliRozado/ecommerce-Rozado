@@ -1,6 +1,7 @@
 .navbar{
     width: 100%;
     box-sizing: border-box;
+    text-decoration: none;
 
     display: flex;
     padding: 10px 70px;
@@ -13,13 +14,14 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
     color:blueviolet;
+    text-decoration: none;
+    
 }
 
 .nav-menu{
     display: flex;
     gap: 20px;
     align-items: center;
-
     list-style: none;
 }
 
@@ -34,4 +36,8 @@
 .nav-link:hover{
     color:rgb(39, 11, 197);
     border-bottom: 1px solid rgb(39, 11, 197);
+}
+
+.link-menu{
+    text-decoration: none;
 }
