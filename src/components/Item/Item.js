@@ -1,6 +1,5 @@
 import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
-import ItemCount from '../ItemCount/ItemCount';
 import {Link} from 'react-router-dom';
 import './Item.css';
 
@@ -10,7 +9,6 @@ const Item = ({id, name, imageURL, price, stock}) =>{
             <img src={`../${imageURL}`}/>
             <p>{name}</p>
             <p>{price} ARS</p>
-            <ItemCount stock={stock}/>
             <Link className="detail-btn" to={`/item/${id}`}>
                 <Button variant={'outlined'}>Ver Detalles</Button>
             </Link>

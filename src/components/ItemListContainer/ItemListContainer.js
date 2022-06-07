@@ -36,7 +36,6 @@ function ItemListContainer() {
                 getItem()
                 .then( (res) =>{
                     setProducts(res)    
-                    console.log("I'm adding the whole list!", res, productData)
             }) 
         }
     })
