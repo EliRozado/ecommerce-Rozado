@@ -24,8 +24,6 @@ const ItemDetailContainer = () => {
             setProduct(productfilter)     
         })
     }, [id])
-    
-    console.log('Respuesta:', productData)
     return(
         <div>
             <ItemDetail data={productData}/>

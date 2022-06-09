@@ -1,13 +1,17 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom'
+import CartContext from '../../context/cartContext';
 import ItemCount from '../ItemCount/ItemCount';
 import { Container, Grid } from "@mui/material";
 import Button from "@mui/material/Button";
+
 import './ItemDetail.css';
+
 
 const ItemDetail = ({data}) => {
     const [quantity, setQuantity] = useState(1);
     const [showButton, setButtonVisibility] = useState(false)
+    const { addToCart, removeFromCart, clear } = useContext(CartContext)
 
     const addProduct = () => {
         setQuantity(quantity + 1)
@@ -18,9 +22,12 @@ const ItemDetail = ({data}) => {
     }
 
     const onAdd = () => {
-        //add to cart function
-        console.log("Producto: ", data, "Cantidad: ", quantity )
-        setButtonVisibility(true)
+        addToCart(data, quantity)
+        //setButtonVisibility(true)
+    }
+
+    const remove = () => {
+        removeFromCart(data)
     }
 
     return(
@@ -46,11 +53,13 @@ const ItemDetail = ({data}) => {
                             :
                             <Button variant="outlined"><Link to="/cart">Terminar compra</Link></Button>
                         }
+                        <Button variant="outlined" onClick={clear}>Limpiar Carrito</Button> 
+                        <Button variant="outlined" onClick={remove}>Remover Producto</Button> 
                     </div>
                 </Grid>
             </Grid>
         </Container>
     )
 }
-
+//Botones Limpiar carrito y remover producto agregados por testing
 export default ItemDetail;
