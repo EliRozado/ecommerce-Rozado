@@ -3,10 +3,12 @@ import ItemList from '../ItemList/ItemList';
 import {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import productList from '../../data/productList_Mock'
+import Loader from '../Loader/Loader';
 
 
 function ItemListContainer() {
     const { id } = useParams()
+    const [loading, setLoading] = useState(false)
     const [productData, setProducts] = useState([])
 
     const getItem = () => {
@@ -18,6 +20,7 @@ function ItemListContainer() {
     }
 
     useEffect(() => {
+        setLoading(false)
         setProducts([])
 
         const filterByCategory = (array) => {
@@ -32,10 +35,12 @@ function ItemListContainer() {
         .then( (res) =>{
             if(id){
                 filterByCategory(res)
+                setLoading(true)
             }else{ 
                 getItem()
                 .then( (res) =>{
-                    setProducts(res)    
+                    setProducts(res)  
+                    setLoading(true)    
             }) 
         }
     })
@@ -43,7 +48,7 @@ function ItemListContainer() {
 
     return (
         <div className="ItemListContainer">
-            <ItemList products={productData}/>
+            { loading ? <ItemList products={productData}/> : <Loader/> }
         </div>
     );
 }

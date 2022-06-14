@@ -1,10 +1,13 @@
 import {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import Loader from '../Loader/Loader';
 import productList from '../../data/productList_Mock'
+
 
 const ItemDetailContainer = () => {
     const { id } = useParams()
+    const [loading, setLoading] = useState(false)
     const [productData, setProduct] = useState({})
 
     const getItem = () => {
@@ -21,12 +24,13 @@ const ItemDetailContainer = () => {
             const productfilter = res.find( (product) => {
                 return product.id == id
             })
-            setProduct(productfilter)     
+            setProduct(productfilter)    
+            setLoading(true) 
         })
     }, [id])
     return(
-        <div>
-            <ItemDetail data={productData}/>
+        <div className="detail-cont">
+            { loading ? <ItemDetail data={productData}/> : <Loader/>  }
         </div>
     )
 }

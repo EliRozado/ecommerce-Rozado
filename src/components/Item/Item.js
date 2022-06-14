@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import {Link} from 'react-router-dom';
 import './Item.css';
 
-const Item = ({id, name, imageURL, price, stock}) =>{
+const Item = ({id, name, imageURL, price}) =>{
     return(
         <Card variant="outlined" className="product" sx={{maxWidth: 280}} id={id}>
             <img src={`../${imageURL}`}/>

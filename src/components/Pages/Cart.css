@@ -1,7 +1,28 @@
+.CartTitle{
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.CartProducts{
+    width: 100%;
+    text-align: center;
+    table-layout: fixed;
+}
+
+.CartProducts > tr:first-child td{
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
 .cart-product-img{
-    max-height: 200px;
+    max-height: 150px;
 }
 
 .cart-product-name{
-    font-size: 1.7em;
+    font-size: 1.1em;
 }

@@ -11,25 +11,14 @@ import './ItemDetail.css';
 const ItemDetail = ({data}) => {
     const [quantity, setQuantity] = useState(1);
     const [showButton, setButtonVisibility] = useState(false)
-    const { addToCart, removeFromCart, clear } = useContext(CartContext)
+    const { addToCart } = useContext(CartContext)
 
-    const addProduct = () => {
-        setQuantity(quantity + 1)
-    }
-
-    const subtProduct = () => {
-        setQuantity(quantity - 1)
-    }
-
+    
     const onAdd = () => {
         addToCart(data, quantity)
-        //setButtonVisibility(true)
+        setButtonVisibility(true)
     }
-
-    const remove = () => {
-        removeFromCart(data)
-    }
-
+    
     return(
         <Container fixed sx={{border: 1, borderRadius: 5, borderColor: 'primary.main', marginTop: 20, marginBottom: 20}}>
             <Grid container spacing={2}>
@@ -47,19 +36,15 @@ const ItemDetail = ({data}) => {
                             <ItemCount 
                                 stock={data.stock} 
                                 quantity={quantity} 
-                                addQty={addProduct} 
-                                subtQty={subtProduct}
+                                setQuantity={setQuantity}
                                 onAdd={onAdd}/>
                             :
                             <Button variant="outlined"><Link to="/cart">Terminar compra</Link></Button>
                         }
-                        <Button variant="outlined" onClick={clear}>Limpiar Carrito</Button> 
-                        <Button variant="outlined" onClick={remove}>Remover Producto</Button> 
                     </div>
                 </Grid>
             </Grid>
         </Container>
     )
 }
-//Botones Limpiar carrito y remover producto agregados por testing
 export default ItemDetail;
