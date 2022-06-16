@@ -1,6 +1,6 @@
 const productList = [
     { id: 1,
-        name: "Peluche Azurill",
+        name: "Peluche Azumarill",
         description: 'Peluche del Pokémon Azumarill de 15 cm',
         category: "peluche",
         imageURL: "plush-azumarill.jpg",

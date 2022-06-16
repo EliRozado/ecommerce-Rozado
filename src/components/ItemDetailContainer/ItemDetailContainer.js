@@ -4,30 +4,30 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 import Loader from '../Loader/Loader';
 import productList from '../../data/productList_Mock'
 
+import { doc, getDoc, query, where } from 'firebase/firestore'
+import database from '../../utils/firebaseConfig'
+
 
 const ItemDetailContainer = () => {
     const { id } = useParams()
     const [loading, setLoading] = useState(false)
     const [productData, setProduct] = useState({})
 
-    const getItem = () => {
-        return new Promise( (resolve) => {
-            setTimeout(()=> {
-                resolve(productList)
-            }, 2000)
+
+    const getProduct = (id) => {
+        const productRef = doc(database, "productos", id)
+        getDoc(productRef).then((product) => {
+            product.exists() && setProduct({id: product.id, ...product.data() })
+            setLoading(true)
         })
     }
 
     useEffect(() => {
-        getItem()
-        .then( (res) =>{
-            const productfilter = res.find( (product) => {
-                return product.id == id
-            })
-            setProduct(productfilter)    
-            setLoading(true) 
-        })
+        setLoading(false)
+
+        getProduct(id)
     }, [id])
+    
     return(
         <div className="detail-cont">
             { loading ? <ItemDetail data={productData}/> : <Loader/>  }
