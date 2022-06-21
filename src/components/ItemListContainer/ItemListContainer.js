@@ -2,7 +2,7 @@ import './ItemListContainer.css'
 import ItemList from '../ItemList/ItemList';
 import {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
-import productList from '../../data/productList_Mock'
+//import productList from '../../data/productList_Mock'
 import Loader from '../Loader/Loader';
 
 import { collection, getDocs, query, where } from 'firebase/firestore'
@@ -41,7 +41,7 @@ function ItemListContainer() {
         setProducts([])
 
         id ? getProductsByCategory(id) : getProducts()
-         setLoading(true)
+        setLoading(true)
         //console.log(productData)
     }, [id])
 
