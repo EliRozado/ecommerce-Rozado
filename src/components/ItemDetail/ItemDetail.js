@@ -1,10 +1,11 @@
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom'
+
 import CartContext from '../../context/cartContext';
 import ItemCount from '../ItemCount/ItemCount';
-import { Container, Grid } from "@mui/material";
-import Button from "@mui/material/Button";
 
+import { Container, Grid } from "@mui/material";
+import Button from '../Button/Button';
 import './ItemDetail.css';
 
 
@@ -20,26 +21,32 @@ const ItemDetail = ({data}) => {
     }
     
     return(
-        <Container fixed sx={{border: 1, borderRadius: 5, borderColor: 'primary.main', marginTop: 20, marginBottom: 20}}>
+        <Container className='ItemDetails-cont' fixed>
             <Grid container spacing={2}>
                 <Grid item xs={6}>
-                    <img className="detailimg" src={`../${data.imageURL}`}/>
+                    <div className="detailimg-cont">
+                        <img className="detailimg" src={`../${data.imageURL}`}/>
+                    </div>
                 </Grid>
                 <Grid item xs={6}>
                     <div className="ItemDetails">
                         <h2>{data.name}</h2>
                         <p className="description">{data.description}</p>
                         <p className="description">Categoría: {data.category}</p>
+                        <p className="description">Licencia: {data.license}</p>
                         <p className="price">{data.price} ARS</p>
                         
-                        {!showButton ? 
+                        {showButton ? 
+                            <div className="buttons">
+                                <Button variant="contained-pink"><Link className="btn-finish" to="/cart">TERMINAR COMPRA</Link></Button>
+                                <Button variant="contained-pink"><Link className="btn-finish" to="/cart">VOLVER AL INICIO</Link></Button>
+                            </div>
+                            :
                             <ItemCount 
                                 stock={data.stock} 
                                 quantity={quantity} 
                                 setQuantity={setQuantity}
                                 onAdd={onAdd}/>
-                            :
-                            <Button variant="outlined"><Link to="/cart">Terminar compra</Link></Button>
                         }
                     </div>
                 </Grid>

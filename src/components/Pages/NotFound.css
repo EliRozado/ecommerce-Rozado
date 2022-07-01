@@ -1,0 +1,26 @@
+.error-cont{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 70px 0px;
+    gap: 20px;
+}
+
+.error-title{
+    font-size: 2.5em;
+}
+
+.error-body{
+    font-size: 1.5em;
+}
+
+.error-button{
+    align-self: center;
+    width: 200px;
+}
+
+.error-button a{
+    text-decoration: none;
+    color: white;
+}

@@ -1,0 +1,29 @@
+.about-cont{
+    background-color: white;
+    padding: 40px;
+    color: #aa8e97;
+    border-radius: 50px;
+    border: 1px solid #e280a3;
+}
+
+.about-flex{
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-cont h2, .about-cont h3{
+    color: #887279;
+}
+
+.about-section{
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+}
+
+.logo{
+    max-width: 100px;
+    align-self: center;
+}

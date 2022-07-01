@@ -4,16 +4,15 @@
     text-decoration: none;
 
     display: flex;
-    padding: 10px 70px;
+    padding: 10px 0px;
     justify-content: space-between;
-    
-    background: white;
+    align-items: center;
 }
 
 .brand{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
-    color:blueviolet;
+    color:#e280a3;
     text-decoration: none;
     
 }
@@ -27,17 +26,16 @@
 
 .nav-link{
     text-decoration: none;
-    color: rgb(105, 15, 189);
-    font-weight: 500;
-    font-size: 20px;
-    transition: 300ms ease-in;
+    color: #e280a3;
+    font-weight: 400;
+    /*transition: 300ms ease-in;*/
 }
 
 .nav-link:hover{
-    color:rgb(39, 11, 197);
-    border-bottom: 1px solid rgb(39, 11, 197);
+    color:#d17595;
 }
 
 .link-menu{
     text-decoration: none;
+    color: #e280a3;
 }

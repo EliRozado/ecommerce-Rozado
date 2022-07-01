@@ -1,15 +1,26 @@
+.ItemDetails-cont{
+    padding: 30px;
+    align-self: center;
+    border: 1px solid #fcbad2;
+    background-color: white;
+    border-radius: 40px;
+}
+
 .ItemDetails{
-    padding: 20px;
+    padding: 30px;
     text-align: center;
+    margin:auto;
 }
 
 .ItemDetails > h2{
     font-size: 2em;
     margin: 20px;
+    color: #887279;
 }
 
 .ItemDetails > p{
     margin: 20px;
+    color: #aa8e97
 }
 
 .description{
@@ -20,7 +31,28 @@
     font-size: 1.4em;
 }
 
+.detailimg-cont{
+    display: flex;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    object-fit: contain;
+    overflow: hidden;
+}
+
 .detailimg{
-    max-width: 500px;
-    max-height: 500px;
+    width: 90%;
+    height: 90%;
+}
+
+.btn-finish{
+    text-decoration: none;
+    color:white
+}
+
+.buttons{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    align-items: center;
 }

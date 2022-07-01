@@ -1,0 +1,53 @@
+.footer-flex{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 15px;
+}
+
+.Footer-container{
+    background-color: #f8e9f2;
+    margin-top: 40px;
+    padding: 50px 0px;
+}
+
+.footer-flex h3{
+    color: #887279;
+}
+
+.footer-flex p{
+    color: #aa8e97;
+}
+
+.footer-form{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0
+}
+
+.footer-form button{
+    width: 100%;
+}
+
+.footer-success{
+    text-align: center;
+    display: flex;
+    gap: 15px;
+    flex-flow: column nowrap;
+    font-size: 1.2em;
+    border-radius: 20px;
+    border: 1px solid rgb(155, 155, 155);
+    padding: 15px;
+}
+
+.footer-success button:first-child{
+    align-self: flex-end;
+}
+
+.footer-success p{
+    padding: 20px 0px 40px;
+}
+
+.credit{
+    text-align: center;
+    color: #887279;
+}

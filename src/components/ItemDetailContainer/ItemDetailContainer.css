@@ -1,0 +1,21 @@
+.detail-cont-link-top{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1em;
+    padding-bottom: 10px;
+    color: #e280a3;
+}
+
+.detail-cont-link-top a{
+    border-bottom: none;
+    border-bottom: 1px dashed transparent;
+    text-decoration: none;
+    color: #a14e6b;
+    transition: all 300ms ease;
+
+}
+
+.detail-cont-link-top a:hover{
+    border-bottom: 1px solid #a14e6b;
+}

@@ -1,4 +1,4 @@
-import Button from "@mui/material/Button";
+import Button from '../Button/Button';
 import './ItemCount.css'
 
 const ItemCount = ({quantity, setQuantity, stock, onAdd}) => {
@@ -13,11 +13,11 @@ const ItemCount = ({quantity, setQuantity, stock, onAdd}) => {
     return ( 
         <div className="ItemCount-Container">
             <div className="ItemCount">
-                <Button variant="outlined" size="small" onClick={subtQty} disabled={quantity == 1}>-</Button>
+                <Button variant="outlined-pink" f={subtQty} disable={quantity == 1}>-</Button>
                     <p className="Number">{quantity}</p>
-                <Button variant="outlined" size="small" onClick={addQty} disabled={quantity == stock}>+</Button>
+                <Button variant="outlined-pink" f={addQty} disable={quantity == stock}>+</Button>
             </div>
-            <Button className="addToCart" variant="outlined" onClick={onAdd}>Agregar al Carrito</Button>
+            <Button className="addToCart" variant="outlined-pink" f={onAdd}>AGREGAR AL CARRITO</Button>
         </div>
     )
 }

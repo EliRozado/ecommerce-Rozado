@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Descripción del proyecto
 
-Idea de un ecommerce que maneja la venta de productos de licencias especificas.
+Idea de un ecommerce que maneja la venta de productos de licencias especificas, los productos son exportados de Japón y el grupo trabaja bajo el nombre MimiShop. Toda la informacion de la página es ficticia.
 
 ## Librarias usadas
 

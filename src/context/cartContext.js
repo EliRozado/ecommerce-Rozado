@@ -1,17 +1,18 @@
-import { createContext, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 
 const CartContext = createContext()
 
 const CartProvider = ({children}) => {
-    const [cartList, setCartList] = useState([]);
-    const [totalPrice, setTotalPrice] = useState(0);
-    const [productsInCart, setProductsInCart] = useState(0);
+    const localCart = JSON.parse(localStorage.getItem('cart'))
+
+    const [cartList, setCartList] = useState( localCart || [] );
+    const [totalPrice, setTotalPrice] = useState( localCart.reduce((accum, item) => accum + (item.quantity * item.product.price), 0) || 0);
+    const [productsInCart, setProductsInCart] = useState( localCart.reduce((accum, item) => accum + item.quantity, 0) || 0 );
 
     const addToCart = (product, quantity) => {
         isInCart(product) ? updateQty(product, quantity) : setCartList([...cartList, {product, quantity}])
         setTotalPrice(totalPrice + product.price*quantity)
         setProductsInCart(productsInCart + quantity)
-        console.log(cartList, totalPrice, productsInCart)
     }
 
     const removeFromCart = (product) => {
@@ -42,8 +43,11 @@ const CartProvider = ({children}) => {
     const updateQty = (product, quantity) => {
         cartList[getProductIndex(product)].quantity += quantity
         setCartList([...cartList])
-        //setTotalPrice(totalPrice + product.price*quantity)
     }
+
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cartList))
+    },[cartList])
 
     const data = {
         cartList,
